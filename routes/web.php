@@ -32,6 +32,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/about', [HomeController::class, 'about'])->name('user.about');
 
+Route::get('/contact', [HomeController::class, 'contact'])->name('user.contact');
+
 Route::get('/skill', [HomeController::class, 'skill'])->name('user.skill');
 Route::get('/view-cv', [CVController::class, 'showCV']);
 

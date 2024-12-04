@@ -35,4 +35,10 @@ class HomeController extends Controller
             return view('user.skill'); // Ensure this view exists
         }
 
+
+        public function contact()
+        {
+            return view('user.contact'); // Ensure this view exists
+        }
+
 }

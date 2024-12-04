@@ -21,7 +21,7 @@
               <h2 class="ftco-heading-2">Have a Questions?</h2>
               <div class="mb-3 block-23">
                 <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">Paban University Of Science And Technology, Department Of (ICE),Bangladesh</span></li>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Pabana University Of Science And Technology, Department Of (ICE),Bangladesh</span></li>
                   <li><a href="#"><span class="icon icon-phone"></span><span class="text">+8801748031295</span></a></li>
                   <li><a href="#"><span class="icon icon-envelope"></span><span class="text">ashik.200607@s.pust.ac.bd</span></a></li>
                 </ul>

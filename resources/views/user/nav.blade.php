@@ -16,7 +16,7 @@
                     <li class="nav-item"><a href="/skill" class="nav-link"><span>Skills</span></a></li>
                     <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
                     <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
-                    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link"><span>Contact</span></a></li>
                     <li class="nav-item">
                         <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout

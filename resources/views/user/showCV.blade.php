@@ -13,8 +13,18 @@
 
 @include('user.nav')
 
+<section>
+    <br>
+    <br>
+    <br>
+
+</section>
 <div class="container">
     <br>
+
+   <div>
+    <h4>My Resume Here and You Download Any Time</h4>
+   </div>
     <br>
     <br>
 
