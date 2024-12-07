@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 // Public routes
 Route::get('/', [HomeController::class, 'user'])->name('user.dashboard');
@@ -36,6 +38,25 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('user.contact')
 
 Route::get('/skill', [HomeController::class, 'skill'])->name('user.skill');
 Route::get('/view-cv', [CVController::class, 'showCV']);
+
+
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::post('/add_category', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/edit_category/{id}', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::post('/update_category/{id}', [CategoryController::class, 'update'])->name('categories.update');
+Route::get('/delete_category/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+
+
+Route::get('add_product', [ProductController::class, 'showAddProductForm']);
+Route::post('add_product', [ProductController::class, 'addProduct'])->name('admin.add_product');
+
+Route::get('/admin/products', [ProductController::class, 'showProducts'])->name('admin.show_products');
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'editProduct'])->name('admin.edit_product');
+Route::post('/admin/products/update/{id}', [ProductController::class, 'updateProduct'])->name('admin.update_product');
+Route::get('/admin/products/delete/{id}', [ProductController::class, 'deleteProduct'])->name('admin.delete_product');
+
 
 
 require __DIR__.'/auth.php';
