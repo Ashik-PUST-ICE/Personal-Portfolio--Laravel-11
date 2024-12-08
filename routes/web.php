@@ -58,6 +58,10 @@ Route::post('/admin/products/update/{id}', [ProductController::class, 'updatePro
 Route::get('/admin/products/delete/{id}', [ProductController::class, 'deleteProduct'])->name('admin.delete_product');
 
 
+Route::get('/Products', [HomeController::class, 'Products']);
+
+
+
 
 require __DIR__.'/auth.php';
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 class HomeController extends Controller
 {
     public function index()
@@ -40,5 +41,14 @@ class HomeController extends Controller
         {
             return view('user.contact'); // Ensure this view exists
         }
+
+
+        public function Products()
+
+        {
+            $products = Product::all(); // Sob product gulo database theke fetch korbe
+            return view('user.Products', compact('products'));
+        }
+
 
 }
