@@ -170,16 +170,17 @@
             <div class="mb-4 col-md-3">
                 <div class="card">
                     <img src="{{ asset('images/' . $product->image) }}" class="card-img-top" alt="{{ $product->product_name }}">
-                    <div class="view-icon">
-                        <a href="" class="btn-details">👁️</a>
-                        {{-- {{ route('product.details', $product->id) }} --}}
-                    </div>
+                    {{-- <div class="view-icon">
+                        <a href="  {{ route('product.details', $product->id) }}" class="btn-details">👁️</a>
+
+                    </div> --}}
                     <div class="card-body">
-                        <p class="card-title">{{ $product->product_name }}</p>
+                        <p class="card-title"><strong>Name:</strong>{{ $product->product_name }}</p>
                         <p class="card-text"><strong>Description:</strong> {{ $product->description }}</p>
-                        <p class="card-price">${{ $product->price }}</p>
+                        <p class="card-price"><strong>Price:</strong>${{ $product->price }}</p>
                     </div>
-                    <a href="" class="btn-cart">Add to Cart</a>
+                    <a href="{{ route('add-to-cart', $product->id) }}" class="btn-cart">Add to Cart</a>
+
                     {{-- {{ route('add-to-cart', $product->id) }} --}}
                 </div>
             </div>

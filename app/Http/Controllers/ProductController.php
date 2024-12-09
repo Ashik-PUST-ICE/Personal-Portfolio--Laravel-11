@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 use Flasher\Laravel\Facade\Flasher;
 
 class ProductController extends Controller
@@ -119,4 +120,78 @@ class ProductController extends Controller
         // Redirect back to the product list page
         return redirect()->route('admin.show_products');
     }
+
+
+
+public function addToCart($productId)
+{
+    $product = Product::find($productId);
+
+    // Check if the product exists
+    if (!$product) {
+        return redirect()->back()->with('error', 'Product not found!');
+    }
+
+    // Retrieve the current cart from session, or initialize an empty array
+    $cart = Session::get('cart', []);
+
+    // Check if the product is already in the cart
+    if (isset($cart[$productId])) {
+        // If product already exists, increment the quantity
+        $cart[$productId]['quantity']++;
+    } else {
+        // If product doesn't exist in the cart, add it
+        $cart[$productId] = [
+            'name' => $product->product_name,
+            'price' => $product->price,
+            'quantity' => 1,
+            'image' => $product->image,
+        ];
+    }
+
+    // Save the updated cart back to the session
+    Session::put('cart', $cart);
+
+    // Redirect back with success message
+    return redirect()->route('cart.show')->with('success', 'Product added to cart!');
+}
+
+public function showCart()
+{
+    // Get cart items from session
+    $cart = Session::get('cart', []);
+
+    // Fetch products based on the IDs stored in the session
+    $products = Product::whereIn('id', array_keys($cart))->get();
+
+    // Pass the products to the view
+    return view('user.mycart', compact('products'));
+}
+
+
+
+public function removeFromCart($productId)
+{
+    $cart = Session::get('cart', []);
+
+    if (isset($cart[$productId])) {
+        unset($cart[$productId]);
+        Session::put('cart', $cart);
+        return redirect()->route('cart.show')->with('success', 'Product removed from cart.');
+    }
+
+    return redirect()->route('cart.show')->with('error', 'Product not found in cart.');
+}
+
+public function showProduct($id)
+{
+    // Fetch the product by its ID
+    $product = Product::findOrFail($id);
+
+    // Pass the product to the view
+    return view('user.product-details', compact('product'));
+}
+
+
+
 }

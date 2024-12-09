@@ -12,10 +12,11 @@
                     <li class="nav-item"><a href="/" class="nav-link"><span>Home</span></a></li>
                     <li class="nav-item"><a href="/about" class="nav-link"><span>About</span></a></li>
                     <li class="nav-item"><a href="/view-cv" class="nav-link"><span>Resume</span></a></li>
-                    <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+
                     <li class="nav-item"><a href="/skill" class="nav-link"><span>Skills</span></a></li>
-                    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+
                     <li class="nav-item"><a href="/Products" class="nav-link"><span>My Products</span></a></li>
+                    <li class="nav-item"><a href="/cart" class="nav-link"><span>Cart Item</span></a></li>
                     <li class="nav-item"><a href="/contact" class="nav-link"><span>Contact</span></a></li>
                     <li class="nav-item">
                         <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

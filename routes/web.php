@@ -61,6 +61,13 @@ Route::get('/admin/products/delete/{id}', [ProductController::class, 'deleteProd
 Route::get('/Products', [HomeController::class, 'Products']);
 
 
+Route::get('/add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add-to-cart');
+
+Route::get('/cart', [ProductController::class, 'showCart'])->name('cart.show');
+
+
+Route::get('/remove-from-cart/{id}', [ProductController::class, 'removeFromCart'])->name('remove-from-cart');
+
 
 
 require __DIR__.'/auth.php';
